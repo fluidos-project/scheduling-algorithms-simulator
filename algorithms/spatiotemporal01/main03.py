@@ -1,6 +1,6 @@
 import numpy as np
 
-from algorithms.spatiotemporal01 import spatiotemporalalgorithm
+from algorithms.spatiotemporal01 import spatiotemporal01
 from models.node import Node
 from views.plot import showPlot
 from models.pod import Pod
@@ -48,7 +48,7 @@ if __name__ == '__main__':
 
     podToSchedule = Pod(5, 10, 1, 10, 50, 50, 50)
 
-    bestNode, bestTimeslot, totalEmissionsPerNode = spatiotemporalalgorithm.execute(podToSchedule, nodes, timeslots,
+    bestNode, bestTimeslot, totalEmissionsPerNode = spatiotemporal01.execute(podToSchedule, nodes, timeslots,
                                                                                     avgCarbonIntensities)
     print(f"Best node: {bestNode.id}")
     print(f"Best timeslot: {bestTimeslot.id}")
