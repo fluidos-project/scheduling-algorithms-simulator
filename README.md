@@ -9,3 +9,11 @@ The project is yet very simple and only provides a way to test different spatial
 - `algorithms/`: Contains the scheduling algorithms.
 - `models/`: Contains the models used by the algorithms (nodes, pods, timeslots...).
 - `views/`: Contains the views used to display the results of the algorithms.
+
+## How to run
+
+To run a specific algorithm, call the `__main__` function that generates fake data and calls the chosen algorithm. The pod characteristics can be modified directly in the `__main__` function. The output will be a plot:
+- The cell circled in blue represents the result. It corresponds to the tuple `[node;timeslot]` which is the output of the algorithm.
+- The value inside each cell represents the amount of CO2 emitted if the pod is scheduled here.
+- The color of each cell is a simple way to view the best and worst cells. The coloration is linear.
+- Some cells may be in white with "NaN" inside, meaning the timeslot is not valid for the given pod.
