@@ -16,4 +16,4 @@ To run a specific algorithm, call the `__main__` function that generates fake da
 - The cell circled in blue represents the result. It corresponds to the tuple `[node;timeslot]` which is the output of the algorithm.
 - The value inside each cell represents the amount of CO2 emitted if the pod is scheduled here.
 - The color of each cell is a simple way to view the best and worst cells. The coloration is linear.
-- Some cells may be in white with "NaN" inside, meaning the timeslot is not valid for the given pod.
+- Some cells may be in white with "NaN" inside, or totally white, meaning the timeslot is not valid for the given pod or the node does not have enough resources left on the given timeslot.
