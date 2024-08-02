@@ -27,9 +27,9 @@ def generate_nodes(num_nodes):
     for i in range(num_nodes):
         embodiedCarbon = random.randint(455000, 2502000)  # Example range for embodied carbon
         lifetime = 4  # Example range for lifetime
-        cpuLeft = random.randint(1000, 10000)  # Example range for CPU left
-        ramLeft = random.randint(1000, 10000)  # Example range for RAM left
-        storageLeft = random.randint(1000, 10000)  # Example range for storage left
+        cpuLeft = random.randint(0, 1000)  # Example range for CPU left
+        ramLeft = random.randint(0, 1000)  # Example range for RAM left
+        storageLeft = random.randint(0, 1000)  # Example range for storage left
         node = Node(i, embodiedCarbon, lifetime, cpuLeft, ramLeft, storageLeft)
         nodes.append(node)
     return nodes
@@ -68,7 +68,7 @@ if __name__ == '__main__':
     timeslots = generate_timeslots(10)
     avgCarbonIntensities = generate_avg_carbon_intensities(nodes, timeslots)
 
-    podToSchedule = Pod(5, 4, 2, 1, 50, 50, 50) # powerConsumption in kW
+    podToSchedule = Pod(5, 7, 2, 1, 50, 50, 50) # powerConsumption in kW
 
     bestNode, bestTimeslot, totalEmissionsPerNode = spatiotemporal01.execute(podToSchedule, nodes, timeslots, avgCarbonIntensities)
     print(f"Best node: {bestNode.id}")

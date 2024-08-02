@@ -1,4 +1,5 @@
 import logging
+import random
 from datetime import datetime
 
 import numpy as np
@@ -51,6 +52,9 @@ def isTimeslotValid(timeslot, pod):
 
 
 def checkNodeResource(node, pod):
+    node.cpuLeft = random.randint(0, 1000)  # Example range for CPU left
+    node.ramLeft = random.randint(0, 1000)  # Example range for RAM left
+    node.storageLeft = random.randint(0, 1000)  # Example range for storage left
     if node.cpuLeft >= pod.cpuRequest and node.ramLeft >= pod.ramRequest and node.storageLeft >= pod.storageRequest:
         return True
     else:
